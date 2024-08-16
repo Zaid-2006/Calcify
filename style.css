@@ -1,0 +1,561 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  padding: 0 1rem;
+  background-color: #fa3834;
+  color: white;
+  position: relative;
+}
+
+.menubutton {
+  position: absolute;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menubutton i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 8vh;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+}
+
+.mode-buttons {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.mode-button {
+  height: 4.5vh;
+  width: 4.5vh;
+  margin-left: 0.5rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+.mode-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+  display: flex;
+  height: 90vh;
+}
+
+.menubar {
+  width: 20vw;
+  height: 90vh;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: width 0.3s;
+}
+
+.menubar:hover {
+  width: 100vw;
+}
+
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.menu-links li {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.menu-links a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: left;
+}
+
+.menu-links a:hover {
+  background-color: #444;
+  color: #ddd;
+}
+
+.menu-links a.active {
+  background-color: #555;
+  color: #eee;
+}
+
+.maincontainer{
+  width: 100vw;
+  height: 100vh;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9317a9;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+}
+
+
+/* basic calculator */
+
+#basiccalc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* background-color: #f9f9f9; */
+}
+
+#basiccalc .box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 500px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#basiccalc .display {
+  padding: 1vw;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#basiccalc #screen {
+  padding: 1vw;
+  font-size: 2vw;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  text-align: right;
+  box-sizing: border-box;
+  width: calc(100% - 6vw);
+}
+
+#basiccalc #ce {
+  background-color: #f44336;
+  color: white;
+  padding: 1vw;
+  margin-left: 1vw;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#basiccalc #ce i{
+  font-size: xx-large;
+}
+#basiccalc #ce:hover {
+  background-color: #d32f2f;
+}
+
+.btns {
+  padding: 1vw;
+}
+
+.row {
+  display: flex;
+}
+
+.row button {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  padding: 1vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  flex: 1;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.row button:hover {
+  background-color: #ddd;
+}
+
+button#eval {
+  background-color: #4CAF50;
+  color: white;
+  grid-column: span 2;
+}
+
+button#eval:hover {
+  background-color: #388E3C;
+}
+
+button#zero {
+  flex: 2;
+  min-width: 40%;
+}
+
+@media (max-width: 600px) {
+  #basiccalc #screen {
+    font-size: 3vw;
+    padding: 0.8vw;
+  }
+
+  .row button {
+    padding: 1.2vw;
+    font-size: 1.2vw;
+  }
+}
+
+
+#advancecalc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #973d3d; /* Darker background for advanced calculator */
+}
+
+#advancecalc .box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 500px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#advancecalc .display {
+  padding: 1vw;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#advancecalc #screen {
+  padding: 1vw;
+  font-size: 2vw;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  text-align: right;
+  box-sizing: border-box;
+  width: calc(100% - 6vw);
+}
+
+#advancecalc #ce {
+  background-color: #f44336;
+  color: white;
+  padding: 1vw;
+  margin-left: 1vw;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#advancecalc #ce:hover {
+  background-color: #d32f2f;
+}
+
+.btns {
+  padding: 1vw;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to fit all buttons */
+}
+
+.row button {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  padding: 1vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  flex: 1;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.row button:hover {
+  background-color: #ddd;
+}
+
+button#eval {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button#eval:hover {
+  background-color: #388E3C;
+}
+
+button#zero {
+  flex: 2;
+  min-width: 40%;
+}
+
+/* Specific styling for additional buttons */
+button {
+  border-radius: 5px;
+  margin: 2px;
+}
+
+button span {
+  font-size: 0.8em; /* Adjust size of superscript */
+}
+
+@media (max-width: 600px) {
+  #advancecalc #screen {
+    font-size: 3vw;
+    padding: 0.8vw;
+  }
+
+  .row button {
+    padding: 1.2vw;
+    font-size: 1.2vw;
+  }
+}
+
+/* bmi calculator */
+  /* General swiper-slide styling */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling for the BMI calculator box */
+
+#bmicalc .box {
+  background-color: #d7bebe;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80vh;
+  max-width: 600px; /* Increased width to accommodate both fields */
+}
+
+/* Heading style */
+#bmicalc h1 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+#bmicalc form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container for weight and height fields in a single row */
+#bmicalc .form-row {
+  display: flex;
+  justify-content:center;
+  margin-bottom: 15px;
+  /* gap: 5vw;   */
+}
+
+/* Styling for individual input rows */
+#bmicalc .form-row > div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+#bmicalc .form-row > div:last-child {
+  margin-right: 0;
+}
+
+/* Label styling */
+#bmicalc label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Input styling */
+#bmicalc input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Button styling */
+#bmicalc button {
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+#bmicalc button:hover {
+  background-color: #218838;
+}
+
+/* Result styling */
+#bmicalc #result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#bmicalc #bmi-value {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#bmicalc #bmi-category {
+  font-size: 1.2em;
+}
+/* currency calculator */
+#currencycalc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#currencycalc .box {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+#currencycalc .currency-converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#currencycalc .currency-converter label {
+  margin: 10px 0 5px;
+}
+
+#currencycalc .currency-converter input,
+#currencycalc .currency-converter select,
+#currencycalc .currency-converter button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#currencycalc .inputbox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+}
+
+#currencycalc .inputbox label {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+#currencycalc .inputbox select {
+  flex: 2;
+  margin: 0 10px;
+}
+
+#currencycalc button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#currencycalc button:hover {
+  background-color: #0056b3;
+}
+
+#currencycalc #result {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
