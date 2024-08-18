@@ -87,7 +87,7 @@ body {
   padding: 20px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   position: relative;
-  transition: left 0.3s ease; 
+  transition: left 0.3s ease;
   justify-content: center;
 }
 
@@ -124,7 +124,7 @@ body {
 .menu-links a:hover {
   /* background-color: #444; */
   /* color: #ddd; */
-  border-left: 5px solid #007bff; 
+  border-left: 5px solid #007bff;
 }
 
 .menu-links a.active {
@@ -177,19 +177,7 @@ body {
 
 }
 
-/* #basiccalc::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('./image/./—Pngtree—a\ man\ using\ a\ calculator_1458249.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: -1;
-} */
+
 
 #basiccalc .box {
   border: 1px solid #ccc;
@@ -208,6 +196,8 @@ body {
   border-radius: 20px 20px 0px 0px;
   align-items: center;
   height: 12vh;
+  
+  border-bottom: 1px solid white;
   gap: 5px;
 }
 
@@ -219,7 +209,6 @@ body {
   color: #333;
   text-align: right;
   height: 100%;
-
   border-radius: 5px 0px 0px 5px;
   box-sizing: border-box;
   width: calc(100% - 5vw);
@@ -245,7 +234,7 @@ body {
 }
 
 .btns {
-  padding: 1vw;
+  padding: 1.5vw;
 }
 
 .row {
@@ -261,7 +250,8 @@ body {
   transition: background-color 0.3s, color 0.3s;
   flex: 1;
   border-radius: 10px;
-  margin: 2px;
+  margin: 3px;
+
 }
 
 .row button:hover {
@@ -301,17 +291,16 @@ button#zero {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background-color: #973d3d;
-  /* Darker background for advanced calculator */
+  height: 90vh;
+  width: 100vw;background: linear-gradient(135.8deg, rgb(26, 26, 29) 27.1%, rgb(111, 34, 50) 77.5%);
 }
 
 #advancecalc .box {
   border: 1px solid #ccc;
-  border-radius: 10px;
-  width: 90vw;
-  max-width: 500px;
-  background-color: #fff;
+  border-radius: 20px;
+  width: 50%;
+  max-height: 80%;
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -320,86 +309,47 @@ button#zero {
   background-color: #333;
   color: #fff;
   display: flex;
+  border-radius: 20px 20px 0px 0px;
   align-items: center;
-  justify-content: space-between;
+  height: 12vh;
+  border-bottom: 1px solid white;
+  gap: 5px;
 }
 
 #advancecalc #screen {
-  padding: 1vw;
-  font-size: 2vw;
+  padding: 1.5vw;
+  font-size: 2.5vw;
   border: none;
   background-color: #fff;
   color: #333;
   text-align: right;
+  height: 100%;
+  border-radius: 5px;
   box-sizing: border-box;
-  width: calc(100% - 6vw);
+  width: 100%
 }
 
 #advancecalc #ce {
   background-color: #f44336;
   color: white;
   padding: 1vw;
-  margin-left: 1vw;
   flex-shrink: 0;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+
+}
+
+#advancecalc #ce i {
+  font-size: xx-large;
 }
 
 #advancecalc #ce:hover {
   background-color: #d32f2f;
 }
 
-/* .btns {
-  padding: 1vw;
-} */
 
-/* .row {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping to fit all buttons 
-} */
-
-/* .row button {
-  border: 1px solid #ccc;
-  background-color: #eee;
-  padding: 1vw;
-  font-size: 1.5vw;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  flex: 1;
-  border-radius: 5px;
-  margin: 2px;
-}
-
-.row button:hover {
-  background-color: #ddd;
-} */
-/* 
-button#eval {
-  background-color: #4CAF50;
-  color: white;
-} */
-/* 
-button#eval:hover {
-  background-color: #388E3C;
-} */
-
-/* button#zero {
-  flex: 2;
-  min-width: 40%;
-} */
-
-/* Specific styling for additional buttons */
-/* button {
-  border-radius: 5px;
-  margin: 2px;
-}
-
-button span {
-  font-size: 0.8em; /* Adjust size of superscript 
-} */
-
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   #advancecalc #screen {
     font-size: 3vw;
     padding: 0.8vw;
@@ -409,7 +359,7 @@ button span {
     padding: 1.2vw;
     font-size: 1.2vw;
   }
-}
+} */
 
 /* bmi calculator */
 /* General swiper-slide styling */
@@ -424,6 +374,99 @@ button span {
 
 /* Styling for the BMI calculator box */
 
+
+/* currency calculator */
+#currencycalc::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./image/money\ backgorund.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+}
+#currencycalc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#currencycalc .box {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 60vw;
+  height: 70vh;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#currencycalc .box h1{
+  font-size: 5vh;
+  color: white;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#currencycalc .currency-converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  height: 70vh;
+}
+
+  #currencycalc .currency-converter label {
+    margin: 10px 0 5px;
+    color: white;
+  }
+
+#currencycalc .currency-converter input,
+#currencycalc .currency-converter select,
+#currencycalc .currency-converter button {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  
+}
+#currencycalc .currency-converter #amount{
+  width: 50%;
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+#currencycalc .inputbox select {
+  flex: 2;
+  margin: 0 10px;
+}
+
+#currencycalc button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#currencycalc button:hover {
+  background-color: #0056b3;
+}
+
+#currencycalc #result {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+/* bmi calc  */
 #bmicalc .box {
   background-color: #d7bebe;
   padding: 20px;
@@ -508,80 +551,5 @@ button span {
 }
 
 #bmicalc #bmi-category {
-  font-size: 1.2em;
-}
-
-/* currency calculator */
-#currencycalc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-#currencycalc .box {
-  text-align: center;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-}
-
-#currencycalc .currency-converter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#currencycalc .currency-converter label {
-  margin: 10px 0 5px;
-}
-
-#currencycalc .currency-converter input,
-#currencycalc .currency-converter select,
-#currencycalc .currency-converter button {
-  margin: 10px 0;
-  padding: 10px;
-  width: 100%;
-  max-width: 300px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-#currencycalc .inputbox {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 300px;
-  margin: 10px 0;
-}
-
-#currencycalc .inputbox label {
-  margin: 0;
-  flex: 1;
-  text-align: center;
-}
-
-#currencycalc .inputbox select {
-  flex: 2;
-  margin: 0 10px;
-}
-
-#currencycalc button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#currencycalc button:hover {
-  background-color: #0056b3;
-}
-
-#currencycalc #result {
-  margin-top: 20px;
   font-size: 1.2em;
 }
