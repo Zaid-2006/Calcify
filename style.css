@@ -55,7 +55,7 @@ body {
   width: 4.5vh;
   margin-left: 0.5rem;
   background-color: transparent;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
   border-radius: 50%;
@@ -446,7 +446,7 @@ button#zero {
 
 #currencycalc .inputbox {
   display: flex;
-  gap: 21vw;
+  gap: 15vw;
 }
 
 #currencycalc .inputbox .handlemoney {
@@ -461,16 +461,24 @@ button#zero {
 }
 
 #currencycalc button {
-  background-color: #1a1c1d;
-  color: white;
+  
+  padding: 10px;
+  background-color: #101012;
+  color: #fff;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  width: 20%;
-  padding: 10rem;
+  font-size: 1em;
+  margin-top: 40px;
+  width: 40%; /* Button width */
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  align-items: center; /* Center the button content */
 }
 
 #currencycalc button:hover {
-  background-color: #0056b3;
+  background-color: #303233;
 }
 
 #currencycalc #result {
@@ -480,56 +488,72 @@ button#zero {
 }
 
 /* bmi calc  */
-#bmicalc .box {
-  background-color: #d7bebe;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 80vh;
-  max-width: 600px;
-  /* Increased width to accommodate both fields */
+/* Background styling for BMI calculator */
+#bmicalc::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./image/images (1).jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
-/* Heading style */
-#bmicalc h1 {
+/* Container box styling */
+#bmicalc .box {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 60vw;
+  height: 70vh;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to start */
+}
+
+/* Heading styling */
+#bmicalc .box h1 {
+  font-size: 5vh;
+  color: white;
   text-align: center;
-  font-size: 1.8em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-bottom: 20px;
 }
 
 /* Form styling */
-#bmicalc form {
+#bmi-form {
+  width: 100%;
+  margin-top: 60px; /* Add some margin to push the form down */
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the form contents */
 }
 
-/* Container for weight and height fields in a single row */
-#bmicalc .form-row {
+/* Form row styling */
+#bmi-form .form-row {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
-  /* gap: 5vw;   */
+  gap: 10rem;
+  width: 100%;
 }
 
-/* Styling for individual input rows */
-#bmicalc .form-row>div {
-  flex: 1;
-  margin-right: 10px;
-}
-
-#bmicalc .form-row>div:last-child {
-  margin-right: 0;
-}
-
-/* Label styling */
-#bmicalc label {
+/* Label and input styling */
+#bmi-form label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
+  color: white;
 }
 
-/* Input styling */
-#bmicalc input {
+#bmi-form input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
@@ -537,25 +561,31 @@ button#zero {
 }
 
 /* Button styling */
-#bmicalc button {
+#bmi-form button {
   padding: 10px;
-  background-color: #28a745;
+  background-color: #4e524f;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1em;
-  margin-top: 15px;
+  margin-top: 40px;
+  width: 40%; /* Button width */
+  display: flex;
+  justify-content: center;
+  margin-left: 19px; /* Center the button content */
+  align-items: center; /* Center the button content */
 }
 
-#bmicalc button:hover {
-  background-color: #218838;
+#bmi-form button:hover {
+  background-color: #252926;
 }
 
 /* Result styling */
 #bmicalc #result {
   margin-top: 20px;
   text-align: center;
+  color: white;
 }
 
 #bmicalc #bmi-value {
