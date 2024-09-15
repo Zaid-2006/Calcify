@@ -111,19 +111,24 @@ body {
 }
 
 .menu-links a {
-  display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #000000;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: bolder;
   padding: 10px 20px;
   transition: background-color 0.3s, color 0.3s;
   text-align: left;
 }
 
+.menu-links a img {
+  width: 45px; /* Adjust the size as needed */
+  /* height: 24px; */
+  margin-right: 10px; /* Space between image and text */
+}
+
 .menu-links a:hover {
-  /* background-color: #444; */
-  /* color: #ddd; */
   border-left: 5px solid #007bff;
 }
 
@@ -131,7 +136,6 @@ body {
   background-color: #555;
   color: #eee;
 }
-
 .maincontainer {
   width: 100vw;
   height: 100vh;
