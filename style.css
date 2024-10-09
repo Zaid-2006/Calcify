@@ -3,12 +3,25 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.navbar {
+:root{
+  --navcolour:radial-gradient(1224px at 10.6% 8.8%, rgb(255, 255, 255) 0%, rgb(153, 202, 251) 100.2%);
+  
+  --buttoncolour:radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+
+}
+.dark-theme{
+  --navcolour:linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  
+  --buttoncolour:linear-gradient(315deg, #2d3436 0%, #000000 74%);
+
+}
+
+.navbar { 
   display: flex;
   align-items: center;
   height: 10vh;
   padding: 0 1rem;
-  background: linear-gradient(178.6deg, rgb(232, 245, 253) 3.3%, rgb(252, 253, 255) 109.6%);
+  background: var(--navcolour);
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -49,7 +62,7 @@ body {
   align-items: center;
 }
 
-.mode-button {
+.mode-button ,.hightlight-button{
   height: 4.5vh;
   width: 4.5vh;
   margin-left: 0.5rem;
@@ -68,7 +81,9 @@ body {
 .mode-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
+.hightlight-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
 .container {
   display: flex;
@@ -79,7 +94,7 @@ body {
 .menubar {
   width: 20vw;
   height: 90vh;
-  background: linear-gradient(178.6deg, rgb(232, 245, 253) 3.3%, rgb(252, 253, 255) 109.6%);
+  background:var(--navcolour);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -231,6 +246,13 @@ body {
 
 #basiccalc #ce i {
   font-size: xx-large;
+}
+#basiccalc #ac,#advcalc #ac{
+  background-color: #4CAF50;
+  color: white;
+}
+#basiccalc #ac:hover, #advcalc #ac:hover{
+  background-color: #388E3C;
 }
 
 #basiccalc #ce:hover {

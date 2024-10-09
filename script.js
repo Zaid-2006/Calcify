@@ -10,7 +10,7 @@ menu.addEventListener('click', () => {
     maincontainer.style.width = '80vw';
   } else {
     menubar.style.display = 'none';
-    maincontainer.style.width = '100vw';
+    maincontainer.style.width = '100vw';  
   }
 });
 
@@ -48,7 +48,62 @@ document.querySelectorAll('.menu-links a').forEach((link) => {
 
 window.addEventListener('resize', () => {
   swiper.update();
-  swiper.slideTo(currentSlideIndex); 
+  swiper.slideTo(currentSlideIndex);
+});
+
+
+
+//darkmode
+// Select the dark mode toggle button and the menu bar element
+const darkModeToggle = document.querySelector('.mode-button');
+const calcBtns = document.querySelectorAll('.btn'); // Use plural for multiple buttons
+const calcScreen = document.getElementById('screen');
+const darkModeIcon = darkModeToggle.querySelector('i');
+const menuicon = document.querySelector('.menubutton i');
+
+
+let menulinks = document.querySelectorAll(".menu-links a");
+
+// Toggle dark mode for the menu bar when the mode button is clicked
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+
+  // Toggle the icon based on the theme
+  if (document.body.classList.contains('dark-theme')) {
+    darkModeIcon.classList.remove('fa-moon'); // Remove the moon icon
+    darkModeIcon.classList.add('fa-sun');     // Add the sun icon 
+    calcScreen.style.background = 'linear-gradient(315deg, #2d3436 0%, #000000 74%)';
+    menulinks.forEach(link => {
+      link.style.color = 'white';
+    });
+    menuicons.style.color='white';
+    
+   
+
+
+    // Change the background color of all buttons to blue
+    calcBtns.forEach(btn => {
+      btn.style.background = 'linear-gradient(315deg, #2d3436 0%, #000000 74%)';
+      btn.style.color = 'white';
+    });
+    
+  } else {
+    darkModeIcon.classList.remove('fa-sun');  // Remove the sun icon
+    darkModeIcon.classList.add('fa-moon');     // Add the moon icon
+    calcScreen.style.background = 'white';
+    menulinks.forEach(link => {
+      link.style.color = 'black ';
+    });
+
+    menuicons.style.color='black';
+
+    // Change the background color of all buttons to white
+    calcBtns.forEach(btn => {
+      btn.style.background = 'white';
+      btn.style.color = 'black';
+    });
+
+  }
 });
 
 // basic calc
@@ -151,7 +206,7 @@ function advancedBackspace() {
 
 
 // bmi calulator
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Select the form element and result display elements
   const form = document.getElementById('bmi-form');
   const bmiValueElement = document.getElementById('bmi-value');
@@ -159,46 +214,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to calculate BMI
   function calculateBMI(weight, height) {
-      // Convert height from cm to meters
-      height = height / 100;
-      // Calculate BMI
-      const bmi = weight / (height * height);
-      return bmi.toFixed(1); // Return BMI rounded to 1 decimal place
+    // Convert height from cm to meters
+    height = height / 100;
+    // Calculate BMI
+    const bmi = weight / (height * height);
+    return bmi.toFixed(1); // Return BMI rounded to 1 decimal place
   }
 
   // Function to determine BMI category
   function getBMICategory(bmi) {
-      if (bmi < 18.5) {
-          return 'Underweight';
-      } else if (bmi >= 18.5 && bmi < 24.9) {
-          return 'Normal weight';
-      } else if (bmi >= 25 && bmi < 29.9) {
-          return 'Overweight';
-      } else {
-          return 'Obesity';
-      }
+    if (bmi < 18.5) {
+      return 'Underweight';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      return 'Normal weight';
+    } else if (bmi >= 25 && bmi < 29.9) {
+      return 'Overweight';
+    } else {
+      return 'Obesity';
+    }
   }
 
   // Handle form submission
-  form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent default form submission
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-      // Get values from form inputs
-      const weight = parseFloat(document.getElementById('weight').value);
-      const height = parseFloat(document.getElementById('height').value);
+    // Get values from form inputs
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
 
-      if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-          alert('Please enter valid positive numbers for weight and height.');
-          return;
-      }
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+      alert('Please enter valid positive numbers for weight and height.');
+      return;
+    }
 
-      // Calculate BMI and get category
-      const bmi = calculateBMI(weight, height);
-      const category = getBMICategory(bmi);
+    // Calculate BMI and get category
+    const bmi = calculateBMI(weight, height);
+    const category = getBMICategory(bmi);
 
-      // Display the results
-      bmiValueElement.textContent = `Your BMI is ${bmi}`;
-      bmiCategoryElement.textContent = `Category: ${category}`;
+    // Display the results
+    bmiValueElement.textContent = `Your BMI is ${bmi}`;
+    bmiCategoryElement.textContent = `Category: ${category}`;
   });
 });
 
@@ -222,17 +277,17 @@ function convertCurrency() {
   const toCurrency = document.getElementById('to-currency').value;
 
   if (isNaN(amount) || amount <= 0) {
-      document.getElementById('result').innerText = 'Please enter a valid amount.';
-      return;
+    document.getElementById('result').innerText = 'Please enter a valid amount.';
+    return;
   }
 
   // Perform conversion using fixed exchange rates
   const fromRate = exchangeRates[fromCurrency];
   const toRate = exchangeRates[toCurrency];
-  
+
   if (!fromRate || !toRate) {
-      document.getElementById('result').innerText = 'Currency not supported.';
-      return;
+    document.getElementById('result').innerText = 'Currency not supported.';
+    return;
   }
 
   const result = amount * (toRate / fromRate);
